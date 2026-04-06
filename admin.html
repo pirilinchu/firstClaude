@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin · Santiago &amp; Alexandra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script type="module" src="js/admin.js"></script>
+</head>
+
+<body>
+
+  <!-- ── Header ────────────────────────────────────────────────── -->
+  <header class="admin-header">
+    <div>
+      <h1>Santiago &amp; Alexandra</h1>
+      <p class="admin-header-sub">Panel de administración · 03.10.2026</p>
+    </div>
+    <a href="index.html" style="color:rgba(232,213,163,0.5);font-size:0.8rem;text-decoration:none;letter-spacing:0.08em;">
+      ← Ver invitación
+    </a>
+  </header>
+
+  <!-- ── Login screen ──────────────────────────────────────────── -->
+  <div id="admin-login" class="admin-login">
+    <div class="login-card">
+      <h2>Acceso privado</h2>
+      <p>Ingresa tu contraseña para ver las confirmaciones</p>
+      <input class="pw-input" type="password" id="admin-password" placeholder="Contraseña" autofocus>
+      <p class="pw-error" id="pw-error"></p>
+      <button class="btn btn-primary" id="login-btn" style="width:100%;">Entrar</button>
+    </div>
+  </div>
+
+  <!-- ── Dashboard (hidden until login) ───────────────────────── -->
+  <div id="admin-dashboard" style="display:none;">
+    <div class="admin-body">
+
+      <!-- Supabase not configured warning -->
+      <div class="setup-warning" id="setup-warning">
+        <h3>Supabase no configurado</h3>
+        <p>
+          Para guardar y ver confirmaciones necesitas conectar Supabase.<br>
+          1. Crea un proyecto en <strong>supabase.com</strong> (es gratis)<br>
+          2. Corre el archivo <code>supabase-setup.sql</code> en el SQL Editor<br>
+          3. Copia tu <code>URL</code> y <code>anon key</code> en <code>config.js</code>
+        </p>
+      </div>
+
+      <!-- ── RSVPs ─────────────────────────────────────────────── -->
+      <div class="admin-section">
+        <h2>Confirmaciones</h2>
+        <p class="admin-section-meta">Todas las respuestas recibidas</p>
+
+        <div class="table-toolbar">
+          <button class="btn btn-outline" id="refresh-btn">↻ Actualizar</button>
+          <button class="btn btn-outline" id="export-btn">↓ Exportar CSV</button>
+          <span class="stat-badge" id="rsvp-count">Cargando…</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>¿Asiste?</th>
+                <th>Personas</th>
+                <th>Restricciones</th>
+                <th>Token</th>
+                <th>Fecha</th>
+              </tr>
+            </thead>
+            <tbody id="rsvp-tbody">
+              <tr>
+                <td colspan="6" style="text-align:center;color:#aaa;padding:2rem;">Cargando…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ── Guest Tokens ───────────────────────────────────────── -->
+      <div class="admin-section">
+        <h2>Invitados &amp; Links personalizados</h2>
+        <p class="admin-section-meta">
+          Cada invitado recibe un link único. El número de personas máximo queda bloqueado en el formulario.
+        </p>
+
+        <div class="table-toolbar">
+          <button class="btn btn-outline" id="refresh-guests-btn" onclick="location.reload()">↻ Actualizar</button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre del invitado</th>
+                <th>Asientos máx.</th>
+                <th>Link personalizado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="guests-tbody">
+              <tr>
+                <td colspan="4" style="text-align:center;color:#aaa;padding:2rem;">Cargando…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Create new guest -->
+        <form class="create-form" id="create-guest-form">
+          <div class="create-form-group">
+            <label for="g-name">Nombre del invitado</label>
+            <input type="text" id="g-name" placeholder="Ej. María González" required>
+          </div>
+          <div class="create-form-group" style="max-width:160px;">
+            <label for="g-seats">Asientos máx.</label>
+            <select id="g-seats" required>
+              <option value="1">1 persona</option>
+              <option value="2" selected>2 personas</option>
+              <option value="3">3 personas</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">+ Crear invitado</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module">
+    import { initAdmin } from './js/admin.js';
+    document.addEventListener('DOMContentLoaded', initAdmin);
+  </script>
+
+</body>
+</html>
