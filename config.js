@@ -66,8 +66,8 @@ export const CONFIG = {
   //   2. Open the SQL Editor and run the contents of supabase-setup.sql
   //   3. Go to Project Settings → API and paste your values below
   supabase: {
-    url:     "YOUR_SUPABASE_URL",       // https://xxxx.supabase.co
-    anonKey: "YOUR_SUPABASE_ANON_KEY",  // anon / public key
+    url:     "https://gsyymnjxjpipcrbjjehm.supabase.co",       // https://xxxx.supabase.co
+    anonKey: "sb_publishable_g-d45RUlA1n8GSxtZsnOWA_E2Zq9Jpu",  // anon / public key
   },
 
   // ── ADMIN ────────────────────────────────────────────────────────
