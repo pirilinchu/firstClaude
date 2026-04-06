@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santiago &amp; Alexandra · 03.10.2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       VARIABLES
+    ============================================================ */
+    :root {
+      --burgundy:    #6B2737;
+      --deep-burg:   #4A1525;
+      --gold:        #C9A96E;
+      --light-gold:  #E8D5A3;
+      --cream:       #FAF7F2;
+      --warm-white:  #FFFDF9;
+      --charcoal:    #3D3D3D;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--charcoal);
+      background-color: var(--cream);
+      /* subtle linen/paper texture */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      overflow-x: hidden;
+      line-height: 1.65;
+    }
+
+    /* ============================================================
+       LAYOUT HELPERS
+    ============================================================ */
+    .section-wrapper { padding: 90px 24px; }
+    .container       { max-width: 960px; margin: 0 auto; }
+
+    /* ============================================================
+       TYPOGRAPHY HELPERS
+    ============================================================ */
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      color: var(--burgundy);
+      text-align: center;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      color: #9a9a9a;
+      text-align: center;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ============================================================
+       DECORATIVE DIVIDERS
+    ============================================================ */
+    .gold-divider {
+      width: 55%;
+      max-width: 360px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 0 auto 2.5rem;
+    }
+
+    .section-border {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,169,110,0.35) 30%, rgba(201,169,110,0.35) 70%, transparent);
+    }
+
+    /* ============================================================
+       CARDS
+    ============================================================ */
+    .card {
+      background: var(--warm-white);
+      border: 1px solid rgba(201,169,110,0.45);
+      border-radius: 6px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 28px rgba(74,21,37,0.07), 0 1px 4px rgba(74,21,37,0.04);
+    }
+
+    /* ============================================================
+       FADE-IN ON SCROLL
+    ============================================================ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.85s ease, transform 0.85s ease;
+    }
+    .fade-in.visible           { opacity: 1; transform: translateY(0); }
+    .fade-in.d1                { transition-delay: 0.10s; }
+    .fade-in.d2                { transition-delay: 0.20s; }
+    .fade-in.d3                { transition-delay: 0.30s; }
+    .fade-in.d4                { transition-delay: 0.40s; }
+
+    /* ============================================================
+       BOTANICAL ACCENT ROW
+    ============================================================ */
+    .botanical-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ============================================================
+       1. HERO
+    ============================================================ */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(155deg, var(--deep-burg) 0%, #3b1122 45%, #5a2232 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 28px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='500' height='500' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    /* Ghost ampersand */
+    .hero-big-amp {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(12rem, 30vw, 22rem);
+      color: rgba(201, 169, 110, 0.07);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      z-index: 1;
+    }
+
+    /* Floating leaves container */
+    .leaf-stage {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .f-leaf {
+      position: absolute;
+      bottom: -60px;
+      opacity: 0;
+      animation: riseLeaf linear infinite;
+    }
+
+    @keyframes riseLeaf {
+      0%   { transform: translateY(0)     rotate(0deg);   opacity: 0;   }
+      5%   {                                              opacity: 0.55; }
+      90%  {                                              opacity: 0.35; }
+      100% { transform: translateY(-110vh) rotate(420deg); opacity: 0;   }
+    }
+
+    /* Hero content */
+    .hero-body {
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(3rem, 9vw, 6.5rem);
+      font-weight: 400;
+      color: var(--light-gold);
+      letter-spacing: 0.02em;
+      line-height: 1.05;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+    }
+
+    .hero-names .inline-amp {
+      color: var(--gold);
+      font-size: 0.75em;
+      margin: 0 0.18em;
+    }
+
+    .hero-hr {
+      width: 110px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 1.4rem auto;
+    }
+
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      color: rgba(232,213,163,0.7);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 300;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-date {
+      font-family: 'Lato', sans-serif;
+      font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+      color: var(--gold);
+      letter-spacing: 0.3em;
+      font-weight: 300;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-location {
+      font-family: 'Lato', sans-serif;
+      font-size: clamp(0.8rem, 2vw, 0.95rem);
+      color: rgba(232,213,163,0.55);
+      letter-spacing: 0.12em;
+      font-weight: 300;
+    }
+
+    /* Scroll caret */
+    .scroll-cue {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .scroll-caret {
+      width: 18px;
+      height: 18px;
+      border-right: 1px solid rgba(201,169,110,0.45);
+      border-bottom: 1px solid rgba(201,169,110,0.45);
+      transform: rotate(45deg);
+      animation: caretBounce 1.6s ease-in-out infinite;
+    }
+
+    @keyframes caretBounce {
+      0%, 100% { transform: rotate(45deg) translate(0,0);   }
+      50%       { transform: rotate(45deg) translate(3px,3px); }
+    }
+
+    /* ============================================================
+       2. COUNTDOWN
+    ============================================================ */
+    .countdown-section {
+      background: var(--deep-burg);
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .countdown-section .section-title    { color: var(--light-gold); }
+    .countdown-section .section-subtitle { color: rgba(232,213,163,0.55); }
+    .countdown-section .gold-divider     { background: linear-gradient(to right, transparent, rgba(201,169,110,0.45), transparent); }
+
+    .cd-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 480px) {
+      .cd-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .cd-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,169,110,0.35);
+      border-radius: 6px;
+      padding: 1.6rem 1rem;
+    }
+
+    .cd-num {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 7vw, 4.2rem);
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .cd-lbl {
+      display: block;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.65rem;
+      color: rgba(232,213,163,0.5);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-top: 0.45rem;
+    }
+
+    /* ============================================================
+       3. CEREMONIA & RECEPCIÓN
+    ============================================================ */
+    .event-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 580px) {
+      .event-grid { grid-template-columns: 1fr; }
+    }
+
+    .event-card {
+      text-align: center;
+      padding: 2.5rem 1.75rem;
+    }
+
+    .event-icon { margin-bottom: 1.2rem; }
+
+    .event-type {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--burgundy);
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .event-time {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      margin-bottom: 0.4rem;
+    }
+
+    .event-venue {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.88rem;
+      color: #999;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .dress-note {
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      font-style: italic;
+      padding: 1.2rem 2rem;
+      background: rgba(201,169,110,0.07);
+      border: 1px solid rgba(201,169,110,0.28);
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ============================================================
+       4. CÓDIGO DE VESTIMENTA
+    ============================================================ */
+    .vest-bg { background: var(--warm-white); }
+
+    .swatch-group-lbl {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #aaa;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .swatches {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 1.4rem;
+    }
+
+    .sw {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .sw-dot {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.6);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+      position: relative;
+    }
+
+    .sw-dot.no::after {
+      content: '✕';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .sw-lbl {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.68rem;
+      color: #999;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    .vest-sep {
+      width: 100%;
+      height: 1px;
+      background: rgba(201,169,110,0.2);
+      margin: 2rem 0;
+    }
+
+    .vest-note {
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      color: #888;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* ============================================================
+       5. RSVP
+    ============================================================ */
+    .rsvp-wrapper { max-width: 560px; margin: 0 auto; }
+
+    .rsvp-wrapper .card { padding: 3rem 2.5rem; }
+
+    @media (max-width: 480px) {
+      .rsvp-wrapper .card { padding: 2rem 1.5rem; }
+    }
+
+    .form-group { margin-bottom: 1.5rem; }
+
+    .form-lbl {
+      display: block;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 0.45rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(201,169,110,0.5);
+      border-radius: 4px;
+      background: var(--cream);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+      appearance: none;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,169,110,0.15);
+    }
+
+    .form-input.err,
+    .form-textarea.err { border-color: #cc4444; }
+
+    .form-textarea { resize: vertical; min-height: 80px; }
+
+    .radio-row {
+      display: flex;
+      gap: 1.6rem;
+      padding: 0.1rem 0;
+    }
+
+    .radio-row.err { outline: 2px solid #cc4444; border-radius: 4px; padding: 0.4rem; }
+
+    .rlbl {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .rlbl input[type="radio"] { accent-color: var(--burgundy); width: 16px; height: 16px; }
+
+    .btn-confirm {
+      width: 100%;
+      padding: 1rem;
+      background: var(--burgundy);
+      color: var(--light-gold);
+      border: none;
+      border-radius: 4px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.15s;
+      margin-top: 0.5rem;
+    }
+
+    .btn-confirm:hover { background: var(--deep-burg); transform: translateY(-1px); }
+    .btn-confirm:active { transform: translateY(0); }
+
+    .thankyou {
+      display: none;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .thankyou.show { display: block; }
+
+    .thankyou h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--burgundy);
+      margin: 1rem 0 0.75rem;
+    }
+
+    .thankyou p {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.92rem;
+      color: #888;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       6. REGALO
+    ============================================================ */
+    .regalo-bg { background: var(--warm-white); }
+
+    .regalo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    @media (max-width: 560px) {
+      .regalo-grid { grid-template-columns: 1fr; }
+    }
+
+    .qr-card { text-align: center; }
+
+    .qr-lbl {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      color: #aaa;
+      letter-spacing: 0.08em;
+      margin-top: 0.85rem;
+      display: block;
+    }
+
+    .bank-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      color: var(--burgundy);
+      text-align: center;
+      margin-bottom: 1.1rem;
+    }
+
+    .brow {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(201,169,110,0.18);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.86rem;
+    }
+
+    .brow:last-child { border-bottom: none; }
+    .bkey { color: #bbb; font-weight: 300; }
+    .bval { color: var(--charcoal); text-align: right; }
+
+    /* ============================================================
+       7. APP
+    ============================================================ */
+    .app-section {
+      background: var(--deep-burg);
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .app-section .section-title    { color: var(--light-gold); }
+    .app-section .section-subtitle { color: rgba(232,213,163,0.55); }
+    .app-section .gold-divider     { background: linear-gradient(to right, transparent, rgba(201,169,110,0.4), transparent); }
+
+    .app-photo-note {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.88rem;
+      font-style: italic;
+      color: rgba(232,213,163,0.5);
+      letter-spacing: 0.06em;
+      margin-bottom: 2.2rem;
+    }
+
+    .app-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .store-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      border: 1px solid rgba(201,169,110,0.45);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+      color: var(--light-gold);
+      text-decoration: none;
+      font-family: 'Lato', sans-serif;
+      transition: background 0.25s, border-color 0.25s;
+    }
+
+    .store-btn:hover { background: rgba(201,169,110,0.1); border-color: var(--gold); }
+
+    .store-btn-text small {
+      display: block;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.65;
+    }
+
+    .store-btn-text strong {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    /* ============================================================
+       8. UBICACIÓN
+    ============================================================ */
+    .map-addr {
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      color: #aaa;
+      font-style: italic;
+      letter-spacing: 0.06em;
+      margin-bottom: 2rem;
+    }
+
+    .map-frame {
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid rgba(201,169,110,0.4);
+      box-shadow: 0 4px 28px rgba(74,21,37,0.08);
+      margin-bottom: 1.75rem;
+    }
+
+    .map-frame iframe {
+      display: block;
+      width: 100%;
+      height: 380px;
+      border: none;
+    }
+
+    .btn-gmaps {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.85rem 2.2rem;
+      background: var(--burgundy);
+      color: var(--light-gold);
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      transition: background 0.25s, transform 0.15s;
+    }
+
+    .btn-gmaps:hover { background: var(--deep-burg); transform: translateY(-1px); }
+
+    /* ============================================================
+       9. FOOTER
+    ============================================================ */
+    .footer {
+      background: var(--deep-burg);
+      padding: 80px 24px 56px;
+      text-align: center;
+    }
+
+    .footer-vine { opacity: 0.45; margin-bottom: 2.4rem; }
+
+    .footer-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.9rem, 5vw, 3.2rem);
+      font-weight: 400;
+      color: var(--light-gold);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-hr {
+      width: 70px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 1.5rem auto;
+    }
+
+    .footer-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-weight: 300;
+      color: rgba(232,213,163,0.55);
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.75;
+    }
+
+    .footer-love {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(201,169,110,0.4);
+    }
+
+    /* ============================================================
+       RESPONSIVE TWEAKS
+    ============================================================ */
+    @media (max-width: 480px) {
+      .section-wrapper { padding: 64px 20px; }
+      .card            { padding: 2rem 1.25rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================================================================
+     1. HERO
+================================================================ -->
+<section class="hero" id="inicio">
+
+  <!-- Floating leaf stage (JS-populated) -->
+  <div class="leaf-stage" id="leafStage"></div>
+
+  <!-- Ghost decorative ampersand -->
+  <div class="hero-big-amp" aria-hidden="true">&amp;</div>
+
+  <!-- Main hero content -->
+  <div class="hero-body">
+
+    <!-- Vine botanical accent -->
+    <div class="botanical-row" style="margin-bottom:1.4rem;" aria-hidden="true">
+      <svg width="70" height="22" viewBox="0 0 70 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 11 Q17 3 35 11 Q52 19 70 11" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.45"/>
+        <path d="M18 11 Q22 4 27 7" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.45"/>
+        <path d="M45 11 Q49 18 54 15" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.45"/>
+        <circle cx="27" cy="7"  r="2.5" fill="#C9A96E" opacity="0.35"/>
+        <circle cx="54" cy="15" r="2.5" fill="#C9A96E" opacity="0.35"/>
+      </svg>
+      <!-- small grape leaf -->
+      <svg width="18" height="22" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 2 C28 2 38 10 38 22 C38 34 30 46 20 47 C10 46 2 34 2 22 C2 10 12 2 20 2Z"
+          fill="rgba(201,169,110,0.15)" stroke="#C9A96E" stroke-width="1" opacity="0.5"/>
+        <line x1="20" y1="4"  x2="20" y2="45" stroke="#C9A96E" stroke-width="0.6" opacity="0.35"/>
+        <line x1="20" y1="16" x2="9"  x2="28" stroke="#C9A96E" stroke-width="0.5" opacity="0.3"/>
+      </svg>
+      <svg width="70" height="22" viewBox="0 0 70 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform:scaleX(-1)">
+        <path d="M0 11 Q17 3 35 11 Q52 19 70 11" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.45"/>
+        <path d="M18 11 Q22 4 27 7" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.45"/>
+        <path d="M45 11 Q49 18 54 15" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.45"/>
+        <circle cx="27" cy="7"  r="2.5" fill="#C9A96E" opacity="0.35"/>
+        <circle cx="54" cy="15" r="2.5" fill="#C9A96E" opacity="0.35"/>
+      </svg>
+    </div>
+
+    <!-- Names -->
+    <h1 class="hero-names">
+      Santiago <span class="inline-amp">&amp;</span> Alexandra
+    </h1>
+
+    <div class="hero-hr"></div>
+
+    <p class="hero-tagline">Nos casamos</p>
+
+    <p class="hero-date">3 &nbsp;&middot;&nbsp; Octubre &nbsp;&middot;&nbsp; 2026</p>
+
+    <p class="hero-location">Viñedo Cañón Escondido &nbsp;&mdash;&nbsp; Tarija, Bolivia</p>
+
+  </div>
+
+  <!-- Scroll caret -->
+  <div class="scroll-cue" aria-hidden="true">
+    <div class="scroll-caret"></div>
+  </div>
+
+</section>
+
+<!-- ================================================================
+     2. CUENTA REGRESIVA
+================================================================ -->
+<section class="countdown-section" id="cuenta-regresiva">
+  <div class="container">
+    <h2 class="section-title fade-in">Faltan&hellip;</h2>
+    <p class="section-subtitle fade-in d1">Para el gran día</p>
+    <div class="gold-divider fade-in d1"></div>
+
+    <div class="cd-grid">
+      <div class="cd-card fade-in d1">
+        <span class="cd-num" id="cd-days">--</span>
+        <span class="cd-lbl">Días</span>
+      </div>
+      <div class="cd-card fade-in d2">
+        <span class="cd-num" id="cd-hours">--</span>
+        <span class="cd-lbl">Horas</span>
+      </div>
+      <div class="cd-card fade-in d3">
+        <span class="cd-num" id="cd-minutes">--</span>
+        <span class="cd-lbl">Minutos</span>
+      </div>
+      <div class="cd-card fade-in d4">
+        <span class="cd-num" id="cd-seconds">--</span>
+        <span class="cd-lbl">Segundos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-border"></div>
+
+<!-- ================================================================
+     3. CEREMONIA & RECEPCIÓN
+================================================================ -->
+<section class="section-wrapper" style="background:var(--cream);" id="ceremonia">
+  <div class="container">
+
+    <!-- Botanical accent: grape cluster -->
+    <div class="botanical-row fade-in" aria-hidden="true">
+      <svg width="44" height="52" viewBox="0 0 44 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Grapes -->
+        <circle cx="22" cy="10" r="5.5" fill="#6B2737" opacity="0.45"/>
+        <circle cx="14" cy="19" r="5.5" fill="#6B2737" opacity="0.45"/>
+        <circle cx="30" cy="19" r="5.5" fill="#6B2737" opacity="0.45"/>
+        <circle cx="7"  cy="29" r="5.5" fill="#6B2737" opacity="0.45"/>
+        <circle cx="22" cy="29" r="5.5" fill="#6B2737" opacity="0.45"/>
+        <circle cx="37" cy="29" r="5.5" fill="#6B2737" opacity="0.45"/>
+        <circle cx="14" cy="39" r="5.5" fill="#6B2737" opacity="0.45"/>
+        <circle cx="30" cy="39" r="5.5" fill="#6B2737" opacity="0.45"/>
+        <circle cx="22" cy="49" r="5.5" fill="#6B2737" opacity="0.45"/>
+        <!-- Stem -->
+        <path d="M22 4 Q27 1 32 3" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <h2 class="section-title fade-in">Ceremonia &amp; Recepción</h2>
+    <div class="gold-divider fade-in"></div>
+
+    <div class="event-grid">
+      <!-- Ceremonia -->
+      <div class="card event-card fade-in d1">
+        <div class="event-icon">
+          <!-- Wedding rings SVG -->
+          <svg width="54" height="44" viewBox="0 0 54 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="19" cy="22" r="14" stroke="#C9A96E" stroke-width="2.5" fill="none"/>
+            <circle cx="35" cy="22" r="14" stroke="#C9A96E" stroke-width="2.5" fill="none"/>
+            <!-- Overlap mask -->
+            <path d="M27 9.5 Q33 15 33 22 Q33 29 27 34.5 Q21 29 21 22 Q21 15 27 9.5 Z"
+              fill="var(--cream)"/>
+          </svg>
+        </div>
+        <h3 class="event-type">Ceremonia</h3>
+        <p class="event-time">17:00 hrs</p>
+        <p class="event-venue">Viñedo Cañón Escondido<br>Tarija, Bolivia</p>
+      </div>
+
+      <!-- Recepción -->
+      <div class="card event-card fade-in d2">
+        <div class="event-icon">
+          <!-- Champagne flute SVG -->
+          <svg width="48" height="54" viewBox="0 0 48 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 6 L34 6 L27 28 L21 28 Z" fill="rgba(201,169,110,0.18)" stroke="#C9A96E" stroke-width="1.8" stroke-linejoin="round"/>
+            <line x1="24" y1="28" x2="24" y2="46" stroke="#C9A96E" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="16" y1="46" x2="32" y2="46" stroke="#C9A96E" stroke-width="1.8" stroke-linecap="round"/>
+            <!-- Bubbles -->
+            <circle cx="20" cy="19" r="1.8" fill="#C9A96E" opacity="0.55"/>
+            <circle cx="25" cy="13" r="1.2" fill="#C9A96E" opacity="0.5"/>
+            <circle cx="22" cy="24" r="1.2" fill="#C9A96E" opacity="0.5"/>
+          </svg>
+        </div>
+        <h3 class="event-type">Recepción</h3>
+        <p class="event-time">19:00 hrs</p>
+        <p class="event-venue">Viñedo Cañón Escondido<br>Tarija, Bolivia</p>
+      </div>
+    </div>
+
+    <div class="dress-note fade-in">
+      El dress code es <strong>elegante</strong>, acorde al entorno del viñedo
+    </div>
+
+  </div>
+</section>
+
+<div class="section-border"></div>
+
+<!-- ================================================================
+     4. CÓDIGO DE VESTIMENTA
+================================================================ -->
+<section class="section-wrapper vest-bg" id="vestimenta">
+  <div class="container">
+
+    <h2 class="section-title fade-in">Código de Vestimenta</h2>
+    <p class="section-subtitle fade-in">Elegante &middot; Viñedo</p>
+    <div class="gold-divider fade-in"></div>
+
+    <!-- Encouraged -->
+    <div class="fade-in">
+      <p class="swatch-group-lbl">Tonos sugeridos</p>
+      <div class="swatches">
+        <div class="sw"><div class="sw-dot" style="background:#6B2737;"></div><span class="sw-lbl">Burgundy</span></div>
+        <div class="sw"><div class="sw-dot" style="background:#7B3244;"></div><span class="sw-lbl">Vino</span></div>
+        <div class="sw"><div class="sw-dot" style="background:#C4A0A8;"></div><span class="sw-lbl">Rosa polvoso</span></div>
+        <div class="sw"><div class="sw-dot" style="background:#8A9A7D;"></div><span class="sw-lbl">Verde salvia</span></div>
+        <div class="sw"><div class="sw-dot" style="background:#2C3E5D;"></div><span class="sw-lbl">Azul marino</span></div>
+        <div class="sw"><div class="sw-dot" style="background:#D4C5A9;"></div><span class="sw-lbl">Champagne</span></div>
+        <div class="sw"><div class="sw-dot" style="background:#C9A96E;"></div><span class="sw-lbl">Dorado</span></div>
+      </div>
+    </div>
+
+    <div class="vest-sep"></div>
+
+    <!-- Discouraged -->
+    <div class="fade-in">
+      <p class="swatch-group-lbl">Por favor evitar</p>
+      <div class="swatches">
+        <div class="sw">
+          <div class="sw-dot no" style="background:#FF5F00;">
+            <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1rem;">✕</span>
+          </div>
+          <span class="sw-lbl">Neón</span>
+        </div>
+        <div class="sw">
+          <div class="sw-dot no" style="background:#A0A0A0;">
+            <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1rem;">✕</span>
+          </div>
+          <span class="sw-lbl">Ropa casual</span>
+        </div>
+        <div class="sw">
+          <div class="sw-dot no" style="background:#4A79B5;">
+            <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1rem;">✕</span>
+          </div>
+          <span class="sw-lbl">Jeans</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="vest-note fade-in">
+      Elige tonos que armonicen con el paisaje del viñedo.<br>
+      <strong>Tacones:</strong> se recomienda calzado cómodo por el terreno natural.
+    </p>
+
+  </div>
+</section>
+
+<div class="section-border"></div>
+
+<!-- ================================================================
+     5. RSVP
+================================================================ -->
+<section class="section-wrapper" style="background:var(--cream);" id="rsvp">
+  <div class="container">
+
+    <h2 class="section-title fade-in">Confirma tu asistencia</h2>
+    <p class="section-subtitle fade-in">Por favor confirma antes del <strong style="font-weight:400;color:#777;">1 de septiembre de 2026</strong></p>
+    <div class="gold-divider fade-in"></div>
+
+    <div class="rsvp-wrapper fade-in">
+      <div class="card">
+
+        <form id="rsvpForm" novalidate>
+
+          <div class="form-group">
+            <label class="form-lbl" for="fNombre">Nombre completo *</label>
+            <input class="form-input" type="text" id="fNombre" name="nombre"
+              placeholder="Tu nombre y apellido" autocomplete="name" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-lbl">¿Asistirás? *</label>
+            <div class="radio-row" id="radioRow">
+              <label class="rlbl">
+                <input type="radio" name="asistencia" value="si"> Sí, asistiré
+              </label>
+              <label class="rlbl">
+                <input type="radio" name="asistencia" value="no"> No podré asistir
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-lbl" for="fPersonas">Número de personas *</label>
+            <input class="form-input" type="number" id="fPersonas" name="personas"
+              min="1" max="10" placeholder="ej. 2" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-lbl" for="fRestricciones">
+              Restricciones alimentarias
+              <span style="text-transform:none;letter-spacing:0;font-weight:300;"> (opcional)</span>
+            </label>
+            <textarea class="form-textarea" id="fRestricciones" name="restricciones"
+              placeholder="Ej. vegetariano, alergia al gluten, mariscos…"></textarea>
+          </div>
+
+          <button type="submit" class="btn-confirm">Confirmar asistencia</button>
+
+        </form>
+
+        <div class="thankyou" id="thankYou">
+          <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="24" stroke="#C9A96E" stroke-width="1.5"/>
+            <path d="M14 26 L23 35 L38 17" stroke="#6B2737" stroke-width="2.5"
+              fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>¡Gracias por confirmar!</h3>
+          <p>Los esperamos con mucha alegría el <strong>3 de octubre de 2026</strong>.<br>Con amor, Santiago &amp; Alexandra.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-border"></div>
+
+<!-- ================================================================
+     6. REGALO DE BODAS
+================================================================ -->
+<section class="section-wrapper regalo-bg" style="background:var(--warm-white);" id="regalo">
+  <div class="container">
+
+    <h2 class="section-title fade-in">Regalo de Bodas</h2>
+    <p class="section-subtitle fade-in">Tu presencia es nuestro mayor regalo. Si deseas hacernos un obsequio, puedes hacerlo mediante:</p>
+    <div class="gold-divider fade-in"></div>
+
+    <div class="regalo-grid">
+
+      <!-- QR -->
+      <div class="card qr-card fade-in d1">
+        <div id="qrHolder" style="display:flex;justify-content:center;align-items:center;"></div>
+        <span class="qr-lbl">Escanea para transferir</span>
+      </div>
+
+      <!-- Bank details -->
+      <div class="card bank-card fade-in d2">
+        <h4>Datos Bancarios</h4>
+        <div class="brow"><span class="bkey">Banco</span>   <span class="bval">Banco Unión S.A.</span></div>
+        <div class="brow"><span class="bkey">Titular</span> <span class="bval">Santiago Mendoza</span></div>
+        <div class="brow"><span class="bkey">Cuenta</span>  <span class="bval">1&#8209;6453782&#8209;0&#8209;1</span></div>
+        <div class="brow"><span class="bkey">Moneda</span>  <span class="bval">Bolivianos (BOB)</span></div>
+        <div class="brow"><span class="bkey">C.I.</span>    <span class="bval">8234567</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-border"></div>
+
+<!-- ================================================================
+     7. DESCARGA LA APP
+================================================================ -->
+<section class="app-section" id="app">
+  <div class="container">
+
+    <!-- Camera icon -->
+    <div style="margin-bottom:1.2rem;" class="fade-in" aria-hidden="true">
+      <svg width="62" height="56" viewBox="0 0 62 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="14" width="52" height="38" rx="5" stroke="#C9A96E" stroke-width="2" fill="none"/>
+        <circle cx="31" cy="33" r="11" stroke="#C9A96E" stroke-width="2" fill="none"/>
+        <circle cx="31" cy="33" r="5.5" fill="rgba(201,169,110,0.28)"/>
+        <path d="M21 14 L25 7 L37 7 L41 14" stroke="#C9A96E" stroke-width="2" fill="none" stroke-linejoin="round"/>
+        <circle cx="50" cy="22" r="2.2" fill="#C9A96E"/>
+      </svg>
+    </div>
+
+    <h2 class="section-title fade-in">Comparte el momento</h2>
+    <p class="section-subtitle fade-in">Descarga la app para subir tus fotos del día y ser parte del álbum compartido</p>
+    <div class="gold-divider fade-in"></div>
+
+    <p class="app-photo-note fade-in">Sube tus fotos &mdash; revive el momento</p>
+
+    <div class="app-btns fade-in">
+
+      <!-- App Store -->
+      <a href="https://apps.apple.com" class="store-btn" target="_blank" rel="noopener noreferrer">
+        <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.5 2C19.5 2 19 7.5 16 9.5C13 11.5 10 10 10 10C10 10 10.5 5 14 3.5C15.5 2.8 17 2.5 19.5 2Z"
+            fill="#E8D5A3"/>
+          <path d="M7 15C7 15 3 17.5 2.5 22C2 26.5 5 30 8.5 30.5C10 30.8 12 29.5 14 29.5C16 29.5 18 31 20 31C23.5 31 27 27.5 27.5 23C28 19 25 16 25 16C25 16 22 18 19 17.5C16 17 15 14 15 14C15 14 12 13.5 10 14.5C9 15 7 15 7 15Z"
+            fill="#E8D5A3"/>
+        </svg>
+        <div class="store-btn-text">
+          <small>Descargar en</small>
+          <strong>App Store</strong>
+        </div>
+      </a>
+
+      <!-- Google Play -->
+      <a href="https://play.google.com" class="store-btn" target="_blank" rel="noopener noreferrer">
+        <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 2 L27 17 L3 32 Z" fill="none" stroke="#E8D5A3" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M3 2 L16.5 15.5" stroke="#E8D5A3" stroke-width="1.2"/>
+          <path d="M3 32 L16.5 18.5" stroke="#E8D5A3" stroke-width="1.2"/>
+        </svg>
+        <div class="store-btn-text">
+          <small>Descargar en</small>
+          <strong>Google Play</strong>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-border"></div>
+
+<!-- ================================================================
+     8. UBICACIÓN / MAPA
+================================================================ -->
+<section class="section-wrapper" style="background:var(--cream);" id="ubicacion">
+  <div class="container">
+
+    <!-- Vine botanical accent -->
+    <div class="botanical-row fade-in" style="margin-bottom:1.5rem;" aria-hidden="true">
+      <svg width="160" height="28" viewBox="0 0 160 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 14 Q40 5 80 14 Q120 23 160 14" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.45"/>
+        <path d="M28 14 Q33 5 40 9"  stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.4"/>
+        <path d="M70 14 Q75 22 82 18" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.4"/>
+        <path d="M115 14 Q120 5 127 9" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.4"/>
+        <circle cx="40"  cy="9"  r="3" fill="#C9A96E" opacity="0.35"/>
+        <circle cx="82"  cy="18" r="3" fill="#C9A96E" opacity="0.35"/>
+        <circle cx="127" cy="9"  r="3" fill="#C9A96E" opacity="0.35"/>
+      </svg>
+    </div>
+
+    <h2 class="section-title fade-in">¿Cómo llegar?</h2>
+    <p class="section-subtitle fade-in">Viñedo Cañón Escondido, Tarija, Bolivia</p>
+    <div class="gold-divider fade-in"></div>
+
+    <p class="map-addr fade-in">Viñedo Cañón Escondido &middot; Tarija, Bolivia</p>
+
+    <div class="map-frame fade-in">
+      <iframe
+        src="https://maps.google.com/maps?q=Tarija+Bolivia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa – Viñedo Cañón Escondido, Tarija, Bolivia">
+      </iframe>
+    </div>
+
+    <div style="text-align:center;" class="fade-in">
+      <a href="https://www.google.com/maps/search/Vi%C3%B1edo+Ca%C3%B1%C3%B3n+Escondido+Tarija+Bolivia"
+        target="_blank" rel="noopener noreferrer" class="btn-gmaps">
+        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 0C4.13 0 1 3.13 1 7C1 12.25 8 20 8 20C8 20 15 12.25 15 7C15 3.13 11.87 0 8 0ZM8 9.5C6.62 9.5 5.5 8.38 5.5 7C5.5 5.62 6.62 4.5 8 4.5C9.38 4.5 10.5 5.62 10.5 7C10.5 8.38 9.38 9.5 8 9.5Z" fill="currentColor"/>
+        </svg>
+        Abrir en Google Maps
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================================
+     9. FOOTER / CIERRE
+================================================================ -->
+<footer class="footer" id="footer">
+
+  <!-- Vine decoration -->
+  <div class="footer-vine" aria-hidden="true">
+    <svg width="220" height="32" viewBox="0 0 220 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+      style="display:block;margin:0 auto;">
+      <path d="M0 16 Q55 5 110 16 Q165 27 220 16" stroke="#C9A96E" stroke-width="1" fill="none"/>
+      <path d="M44 16 Q50 6 58 10"  stroke="#C9A96E" stroke-width="0.8" fill="none"/>
+      <path d="M98 16 Q104 26 112 22" stroke="#C9A96E" stroke-width="0.8" fill="none"/>
+      <path d="M155 16 Q161 6 169 10" stroke="#C9A96E" stroke-width="0.8" fill="none"/>
+      <circle cx="58"  cy="10" r="3.5" fill="#C9A96E"/>
+      <circle cx="112" cy="22" r="3.5" fill="#C9A96E"/>
+      <circle cx="169" cy="10" r="3.5" fill="#C9A96E"/>
+    </svg>
+  </div>
+
+  <p class="footer-names">Santiago &amp; Alexandra &nbsp;&middot;&nbsp; 03.10.2026</p>
+
+  <div class="footer-hr"></div>
+
+  <p class="footer-quote">
+    &ldquo;Como el vino que madura en la calma del viñedo,<br>
+    nuestro amor creció despacio, con raíces profundas,<br>
+    y hoy lo brindamos al mundo entero.&rdquo;
+  </p>
+
+  <div class="footer-hr"></div>
+
+  <p class="footer-love">Con amor, los esperamos</p>
+
+</footer>
+
+<!-- ================================================================
+     JAVASCRIPT
+================================================================ -->
+<script>
+  /* ---------------------------------------------------------------
+     FLOATING GRAPE LEAVES (hero)
+  --------------------------------------------------------------- */
+  (function () {
+    const stage = document.getElementById('leafStage');
+
+    // Simple grape-leaf shape as SVG markup
+    const leafMarkup = `
+      <svg viewBox="0 0 42 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="
+          M21 3
+          C25 3 30 6 33 10
+          C37 8 41 11 41 16
+          C41 22 37 26 33 27
+          C35 32 33 39 28 43
+          C25 46 22 49 21 51
+          C20 49 17 46 14 43
+          C9 39 7 32 9 27
+          C5 26 1 22 1 16
+          C1 11 5 8 9 10
+          C12 6 17 3 21 3 Z
+        " fill="rgba(107,39,55,0.12)" stroke="#C9A96E" stroke-width="0.8" opacity="0.7"/>
+        <line x1="21" y1="5"  x2="21" y2="49" stroke="#C9A96E" stroke-width="0.5" opacity="0.4"/>
+        <line x1="21" y1="17" x2="9"  y2="30"  stroke="#C9A96E" stroke-width="0.4" opacity="0.35"/>
+        <line x1="21" y1="17" x2="33" y2="30"  stroke="#C9A96E" stroke-width="0.4" opacity="0.35"/>
+        <line x1="21" y1="28" x2="11" y2="40"  stroke="#C9A96E" stroke-width="0.4" opacity="0.3"/>
+        <line x1="21" y1="28" x2="31" y2="40"  stroke="#C9A96E" stroke-width="0.4" opacity="0.3"/>
+      </svg>`;
+
+    const leaves = [
+      { left:  '4%', size: 22, dur: 13, delay:  0 },
+      { left: '13%', size: 16, dur: 17, delay:  4 },
+      { left: '25%', size: 26, dur: 14, delay:  8 },
+      { left: '38%', size: 18, dur: 19, delay:  2 },
+      { left: '52%', size: 24, dur: 12, delay:  6 },
+      { left: '65%', size: 20, dur: 16, delay: 10 },
+      { left: '78%', size: 28, dur: 15, delay:  3 },
+      { left: '91%', size: 17, dur: 11, delay:  7 },
+    ];
+
+    leaves.forEach(function (l) {
+      var el = document.createElement('div');
+      el.className = 'f-leaf';
+      el.innerHTML = leafMarkup;
+      el.style.cssText =
+        'left:' + l.left + ';' +
+        'width:' + l.size + 'px;' +
+        'height:' + Math.round(l.size * 1.24) + 'px;' +
+        'animation-duration:' + l.dur + 's;' +
+        'animation-delay:-' + l.delay + 's;';
+      stage.appendChild(el);
+    });
+  }());
+
+  /* ---------------------------------------------------------------
+     COUNTDOWN
+  --------------------------------------------------------------- */
+  (function () {
+    var target = new Date('2026-10-03T17:00:00');
+    var dEl = document.getElementById('cd-days');
+    var hEl = document.getElementById('cd-hours');
+    var mEl = document.getElementById('cd-minutes');
+    var sEl = document.getElementById('cd-seconds');
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function tick() {
+      var now  = new Date();
+      var diff = target - now;
+      if (diff <= 0) {
+        dEl.textContent = mEl.textContent = hEl.textContent = sEl.textContent = '00';
+        return;
+      }
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000)  /   60000);
+      var s = Math.floor((diff % 60000)    /    1000);
+      dEl.textContent = d;
+      hEl.textContent = pad(h);
+      mEl.textContent = pad(m);
+      sEl.textContent = pad(s);
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  }());
+
+  /* ---------------------------------------------------------------
+     INTERSECTION OBSERVER — fade-in on scroll
+  --------------------------------------------------------------- */
+  (function () {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(function (el) {
+      obs.observe(el);
+    });
+  }());
+
+  /* ---------------------------------------------------------------
+     QR CODE PLACEHOLDER (SVG, 21×21 QR-like grid)
+  --------------------------------------------------------------- */
+  (function () {
+    var SIZE      = 21;
+    var CELL      = 8;
+    var QUIET     = 10;
+    var TOTAL     = SIZE * CELL + QUIET * 2;
+
+    // Build grid
+    var g = [];
+    for (var r = 0; r < SIZE; r++) {
+      g[r] = [];
+      for (var c = 0; c < SIZE; c++) g[r][c] = 0;
+    }
+
+    // Finder pattern (7×7)
+    var FP = [
+      [1,1,1,1,1,1,1],
+      [1,0,0,0,0,0,1],
+      [1,0,1,1,1,0,1],
+      [1,0,1,1,1,0,1],
+      [1,0,1,1,1,0,1],
+      [1,0,0,0,0,0,1],
+      [1,1,1,1,1,1,1],
+    ];
+
+    function placeFinder(ro, co) {
+      for (var r = 0; r < 7; r++)
+        for (var c = 0; c < 7; c++)
+          g[ro + r][co + c] = FP[r][c];
+    }
+
+    placeFinder(0, 0);           // top-left
+    placeFinder(0, SIZE - 7);    // top-right
+    placeFinder(SIZE - 7, 0);    // bottom-left
+
+    // Timing patterns (row 6 and col 6, between finders)
+    for (var i = 8; i < SIZE - 8; i++) {
+      g[6][i] = i % 2 === 0 ? 1 : 0;
+      g[i][6] = i % 2 === 0 ? 1 : 0;
+    }
+
+    // Pseudo-random data (seeded XOR-shift for reproducibility)
+    var seed = 0x12A4F7C3;
+    function rnd() {
+      seed ^= seed << 13;
+      seed ^= seed >> 17;
+      seed ^= seed << 5;
+      return ((seed >>> 0) / 0xFFFFFFFF);
+    }
+
+    for (var r = 0; r < SIZE; r++) {
+      for (var c = 0; c < SIZE; c++) {
+        // skip finder zones + separators + timing
+        if (r < 8  && c < 8)          continue;
+        if (r < 8  && c >= SIZE - 8)  continue;
+        if (r >= SIZE - 8 && c < 8)   continue;
+        if (r === 6 || c === 6)        continue; // timing
+        if (r === 7 || c === 7)        continue; // separator
+        if (r === SIZE - 8)            continue;
+        g[r][c] = rnd() > 0.48 ? 1 : 0;
+      }
+    }
+
+    // Build SVG
+    var rects = '';
+    for (var r = 0; r < SIZE; r++) {
+      for (var c = 0; c < SIZE; c++) {
+        if (g[r][c]) {
+          var x = c * CELL + QUIET;
+          var y = r * CELL + QUIET;
+          rects += '<rect x="' + x + '" y="' + y + '" width="' + CELL + '" height="' + CELL + '" fill="#1a1a1a"/>';
+        }
+      }
+    }
+
+    var svg =
+      '<svg viewBox="0 0 ' + TOTAL + ' ' + TOTAL + '" xmlns="http://www.w3.org/2000/svg"' +
+      ' style="width:170px;height:170px;display:block;border-radius:4px;border:1px solid #eee;">' +
+      '<rect width="' + TOTAL + '" height="' + TOTAL + '" fill="white"/>' +
+      rects +
+      '</svg>';
+
+    document.getElementById('qrHolder').innerHTML = svg;
+  }());
+
+  /* ---------------------------------------------------------------
+     RSVP FORM VALIDATION
+  --------------------------------------------------------------- */
+  (function () {
+    var form      = document.getElementById('rsvpForm');
+    var thankYou  = document.getElementById('thankYou');
+    var radioRow  = document.getElementById('radioRow');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var valid = true;
+
+      // Nombre
+      var nombre = document.getElementById('fNombre');
+      nombre.classList.remove('err');
+      if (!nombre.value.trim()) {
+        nombre.classList.add('err');
+        valid = false;
+      }
+
+      // Radio
+      var radio = form.querySelector('input[name="asistencia"]:checked');
+      radioRow.classList.remove('err');
+      if (!radio) {
+        radioRow.classList.add('err');
+        valid = false;
+      }
+
+      // Personas
+      var personas = document.getElementById('fPersonas');
+      personas.classList.remove('err');
+      if (!personas.value || parseInt(personas.value, 10) < 1) {
+        personas.classList.add('err');
+        valid = false;
+      }
+
+      if (!valid) {
+        // Scroll to first error
+        var firstErr = form.querySelector('.err');
+        if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Show thank-you
+      form.style.display = 'none';
+      thankYou.classList.add('show');
+      thankYou.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    // Clear error state on input
+    ['fNombre', 'fPersonas'].forEach(function (id) {
+      document.getElementById(id).addEventListener('input', function () {
+        this.classList.remove('err');
+      });
+    });
+
+    form.querySelectorAll('input[name="asistencia"]').forEach(function (radio) {
+      radio.addEventListener('change', function () {
+        radioRow.classList.remove('err');
+      });
+    });
+  }());
+</script>
+
+</body>
+</html>
